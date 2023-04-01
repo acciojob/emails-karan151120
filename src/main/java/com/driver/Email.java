@@ -46,16 +46,15 @@ public class Email {
             if(newPassword.charAt(i)>='A' && newPassword.charAt(i)<='Z') {
                 flagu = true;
             }
-            if(newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') {
+            else if(newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') {
                 flagl = true;
             }
-            if(newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9') {
+            else if(newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9') {
                 flagd = true;
             }
-            if(!flagd){
-            if((newPassword.charAt(i)>=32 && newPassword.charAt(i)<=47) || (newPassword.charAt(i)>=58 && newPassword.charAt(i)<=64) || (newPassword.charAt(i)>=91 && newPassword.charAt(i)<=96) || (newPassword.charAt(i)>=123 && newPassword.charAt(i)<=126)) {
-                flagd = true;
-            }}
+            else {
+                flags = true;
+            }
         }
 
         if(flagd && flagl && flagu && flags) return true;
